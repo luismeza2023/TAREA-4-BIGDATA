@@ -1,0 +1,818 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\LUIS MEZA> mongosh
+Current Mongosh Log ID: 6722f17561123b5bd20d818f
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.3
+Using MongoDB:          8.0.3
+Using Mongosh:          2.3.3
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-10-30T21:54:36.446-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2024-10-30T21:54:36.446-05:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+------
+
+test> //LISTARMOS TODOAS LAS BASES DE DATOS
+
+test> show dbs
+admin    40.00 KiB
+config  120.00 KiB
+local    72.00 KiB
+tiend    80.00 KiB
+test>
+
+test> //ELEJIMOS LA BASE  tiend
+
+test> use tiend
+switched to db tiend
+tiend>
+
+tiend> //LISTAMOS TODOS LOS PRODUCTOS DISPONIBLES
+
+tiend> db.productos.find({ "disponible": true })
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa62'),
+    nombre: 'Televisor Samsung 55"',
+    categoria: 'Electrónica',
+    precio: 1500,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa63'),
+    nombre: 'Sofá de Cuero',
+    categoria: 'Hogar',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa64'),
+    nombre: 'Camisa de Algodón',
+    categoria: 'Ropa',
+    precio: 45,
+    cantidad: 30,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa66'),
+    nombre: 'Mesa de Comedor',
+    categoria: 'Hogar',
+    precio: 600,
+    cantidad: 2,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa67'),
+    nombre: 'Zapatillas Deportivas Nike',
+    categoria: 'Ropa',
+    precio: 100,
+    cantidad: 25,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa68'),
+    nombre: 'Audífonos Sony WH-1000XM4',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 15,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa69'),
+    nombre: 'Lámpara de Pie Moderna',
+    categoria: 'Hogar',
+    precio: 150,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6a'),
+    nombre: 'Chaqueta de Invierno',
+    categoria: 'Ropa',
+    precio: 90,
+    cantidad: 20,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6c'),
+    nombre: 'Escritorio de Oficina',
+    categoria: 'Hogar',
+    precio: 350,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6d'),
+    nombre: 'Reloj Inteligente Apple',
+    categoria: 'Electrónica',
+    precio: 400,
+    cantidad: 12,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6e'),
+    nombre: "Pantalones Vaqueros Levi's",
+    categoria: 'Ropa',
+    precio: 60,
+    cantidad: 18,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6f'),
+    nombre: 'Refrigerador Samsung',
+    categoria: 'Electrónica',
+    precio: 1800,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa71'),
+    nombre: 'Sudadera Adidas',
+    categoria: 'Ropa',
+    precio: 75,
+    cantidad: 28,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa72'),
+    nombre: 'Cámara Canon EOS',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa73'),
+    nombre: 'Cafetera Nespresso',
+    categoria: 'Hogar',
+    precio: 250,
+    cantidad: 9,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa74'),
+    nombre: 'Pijama de Algodón',
+    categoria: 'Ropa',
+    precio: 35,
+    cantidad: 22,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa76'),
+    nombre: 'Cuchillos de Cocina',
+    categoria: 'Hogar',
+    precio: 80,
+    cantidad: 15,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa77'),
+    nombre: 'Monitor Asus 27"',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 11,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa78'),
+    nombre: 'Camisa Formal Zara',
+    categoria: 'Ropa',
+    precio: 55,
+    cantidad: 20,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa79'),
+    nombre: 'Secadora de Cabello',
+    categoria: 'Electrónica',
+    precio: 120,
+    cantidad: 17,
+    disponible: true
+  }
+]
+Type "it" for more
+tiend> //ACTUALIZAMOS EL PRECIO DE COMPRA DE UN PRODUCTO ESPECIFICO
+
+tiend> db.productos.updateOne({ "nombre": "Cámara de Seguridad Xiaomi" },{ "$set": { "precio": 120 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+tiend> //ELIMINAR UN PRODUCTO
+
+tiend> db.productos.deleteOne({ "nombre": "Laptop Dell XPS 13" })
+{ acknowledged: true, deletedCount: 1 }
+tiend>
+
+tiend> //FILTRAR PRODUCTOS POR RANGO DE PRECIOS
+
+tiend> db.productos.find({ "precio": { "$gte": 100, "$lte": 1500 } })
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa62'),
+    nombre: 'Televisor Samsung 55"',
+    categoria: 'Electrónica',
+    precio: 1500,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa63'),
+    nombre: 'Sofá de Cuero',
+    categoria: 'Hogar',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa66'),
+    nombre: 'Mesa de Comedor',
+    categoria: 'Hogar',
+    precio: 600,
+    cantidad: 2,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa67'),
+    nombre: 'Zapatillas Deportivas Nike',
+    categoria: 'Ropa',
+    precio: 100,
+    cantidad: 25,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa68'),
+    nombre: 'Audífonos Sony WH-1000XM4',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 15,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa69'),
+    nombre: 'Lámpara de Pie Moderna',
+    categoria: 'Hogar',
+    precio: 150,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6b'),
+    nombre: 'Microondas LG',
+    categoria: 'Electrónica',
+    precio: 250,
+    cantidad: 6,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6c'),
+    nombre: 'Escritorio de Oficina',
+    categoria: 'Hogar',
+    precio: 350,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6d'),
+    nombre: 'Reloj Inteligente Apple',
+    categoria: 'Electrónica',
+    precio: 400,
+    cantidad: 12,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa70'),
+    nombre: 'Aspiradora Dyson',
+    categoria: 'Hogar',
+    precio: 650,
+    cantidad: 7,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa72'),
+    nombre: 'Cámara Canon EOS',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa73'),
+    nombre: 'Cafetera Nespresso',
+    categoria: 'Hogar',
+    precio: 250,
+    cantidad: 9,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa75'),
+    nombre: 'Parlante Bose SoundLink',
+    categoria: 'Electrónica',
+    precio: 220,
+    cantidad: 13,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa77'),
+    nombre: 'Monitor Asus 27"',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 11,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa79'),
+    nombre: 'Secadora de Cabello',
+    categoria: 'Electrónica',
+    precio: 120,
+    cantidad: 17,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7a'),
+    nombre: 'Horno Eléctrico',
+    categoria: 'Hogar',
+    precio: 150,
+    cantidad: 6,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7c'),
+    nombre: 'Consola de Videojuegos',
+    categoria: 'Electrónica',
+    precio: 500,
+    cantidad: 3,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7d'),
+    nombre: 'Ventilador de Torre',
+    categoria: 'Hogar',
+    precio: 120,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7f'),
+    nombre: 'Impresora HP',
+    categoria: 'Electrónica',
+    precio: 150,
+    cantidad: 8,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa80'),
+    nombre: 'Aspiradora Robot',
+    categoria: 'Hogar',
+    precio: 400,
+    cantidad: 5,
+    disponible: true
+  }
+]
+Type "it" for more
+tiend>
+
+tiend>
+
+tiend> //BUSCAR PRODUCTOS POR UNA CATEGORIA ESPECIFICA
+
+tiend> db.productos.find({ "categoria": "Electrónica" })
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa62'),
+    nombre: 'Televisor Samsung 55"',
+    categoria: 'Electrónica',
+    precio: 1500,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa68'),
+    nombre: 'Audífonos Sony WH-1000XM4',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 15,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6b'),
+    nombre: 'Microondas LG',
+    categoria: 'Electrónica',
+    precio: 250,
+    cantidad: 6,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6d'),
+    nombre: 'Reloj Inteligente Apple',
+    categoria: 'Electrónica',
+    precio: 400,
+    cantidad: 12,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6f'),
+    nombre: 'Refrigerador Samsung',
+    categoria: 'Electrónica',
+    precio: 1800,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa72'),
+    nombre: 'Cámara Canon EOS',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa75'),
+    nombre: 'Parlante Bose SoundLink',
+    categoria: 'Electrónica',
+    precio: 220,
+    cantidad: 13,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa77'),
+    nombre: 'Monitor Asus 27"',
+    categoria: 'Electrónica',
+    precio: 300,
+    cantidad: 11,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa79'),
+    nombre: 'Secadora de Cabello',
+    categoria: 'Electrónica',
+    precio: 120,
+    cantidad: 17,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7c'),
+    nombre: 'Consola de Videojuegos',
+    categoria: 'Electrónica',
+    precio: 500,
+    cantidad: 3,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7f'),
+    nombre: 'Impresora HP',
+    categoria: 'Electrónica',
+    precio: 150,
+    cantidad: 8,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa81'),
+    nombre: 'Teléfono Samsung Galaxy',
+    categoria: 'Electrónica',
+    precio: 1000,
+    cantidad: 6,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa83'),
+    nombre: 'Tablet iPad',
+    categoria: 'Electrónica',
+    precio: 900,
+    cantidad: 12,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa86'),
+    nombre: 'Mouse Gamer',
+    categoria: 'Electrónica',
+    precio: 50,
+    cantidad: 25,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa89'),
+    nombre: 'Smartwatch Fitbit',
+    categoria: 'Electrónica',
+    precio: 120,
+    cantidad: 14,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa8b'),
+    nombre: 'Auriculares Bluetooth',
+    categoria: 'Electrónica',
+    precio: 80,
+    cantidad: 18,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa8d'),
+    nombre: 'Televisor LG 4K',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa90'),
+    nombre: 'Reproductor de DVD',
+    categoria: 'Electrónica',
+    precio: 180,
+    cantidad: 10,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa93'),
+    nombre: 'Juego de Parlantes',
+    categoria: 'Electrónica',
+    precio: 250,
+    cantidad: 6,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa95'),
+    nombre: 'Cámara GoPro',
+    categoria: 'Electrónica',
+    precio: 350,
+    cantidad: 15,
+    disponible: true
+  }
+]
+Type "it" for more
+tiend>
+
+tiend>
+
+tiend> //BUSCAR PRODUCTOS CON CANTIDAD BAJA SEA MENOR A 10
+
+tiend> db.productos.find({ "cantidad": { "$lt": 10 } })
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa63'),
+    nombre: 'Sofá de Cuero',
+    categoria: 'Hogar',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa66'),
+    nombre: 'Mesa de Comedor',
+    categoria: 'Hogar',
+    precio: 600,
+    cantidad: 2,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6b'),
+    nombre: 'Microondas LG',
+    categoria: 'Electrónica',
+    precio: 250,
+    cantidad: 6,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6f'),
+    nombre: 'Refrigerador Samsung',
+    categoria: 'Electrónica',
+    precio: 1800,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa70'),
+    nombre: 'Aspiradora Dyson',
+    categoria: 'Hogar',
+    precio: 650,
+    cantidad: 7,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa72'),
+    nombre: 'Cámara Canon EOS',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa73'),
+    nombre: 'Cafetera Nespresso',
+    categoria: 'Hogar',
+    precio: 250,
+    cantidad: 9,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7a'),
+    nombre: 'Horno Eléctrico',
+    categoria: 'Hogar',
+    precio: 150,
+    cantidad: 6,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7c'),
+    nombre: 'Consola de Videojuegos',
+    categoria: 'Electrónica',
+    precio: 500,
+    cantidad: 3,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa7f'),
+    nombre: 'Impresora HP',
+    categoria: 'Electrónica',
+    precio: 150,
+    cantidad: 8,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa80'),
+    nombre: 'Aspiradora Robot',
+    categoria: 'Hogar',
+    precio: 400,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa81'),
+    nombre: 'Teléfono Samsung Galaxy',
+    categoria: 'Electrónica',
+    precio: 1000,
+    cantidad: 6,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa8d'),
+    nombre: 'Televisor LG 4K',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa93'),
+    nombre: 'Juego de Parlantes',
+    categoria: 'Electrónica',
+    precio: 250,
+    cantidad: 6,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa97'),
+    nombre: 'Consola PlayStation 5',
+    categoria: 'Electrónica',
+    precio: 700,
+    cantidad: 3,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aaa1'),
+    nombre: 'Parrilla Eléctrica',
+    categoria: 'Hogar',
+    precio: 200,
+    cantidad: 8,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aaa4'),
+    nombre: 'Consola Nintendo Switch',
+    categoria: 'Electrónica',
+    precio: 400,
+    cantidad: 7,
+    disponible: false
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aaa8'),
+    nombre: 'Cámara Fotográfica Polaroid',
+    categoria: 'Electrónica',
+    precio: 130,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aaa9'),
+    nombre: 'Hidrolavadora Karcher',
+    categoria: 'Hogar',
+    precio: 250,
+    cantidad: 6,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aab0'),
+    nombre: 'Telescopio Celestron',
+    categoria: 'Electrónica',
+    precio: 500,
+    cantidad: 4,
+    disponible: true
+  }
+]
+Type "it" for more
+tiend>
+
+tiend>
+
+tiend> //COMBINAR
+
+tiend> db.productos.find({"$and": [{ "categoria": "Electrónica" },{ "precio": { "$gt": 1000 } }]})
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa62'),
+    nombre: 'Televisor Samsung 55"',
+    categoria: 'Electrónica',
+    precio: 1500,
+    cantidad: 10,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa6f'),
+    nombre: 'Refrigerador Samsung',
+    categoria: 'Electrónica',
+    precio: 1800,
+    cantidad: 4,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa72'),
+    nombre: 'Cámara Canon EOS',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 5,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa8d'),
+    nombre: 'Televisor LG 4K',
+    categoria: 'Electrónica',
+    precio: 1200,
+    cantidad: 4,
+    disponible: true
+  }
+]
+tiend>
+
+tiend> //BUSCAR PRODUCTOS CON PALABRAS ESPECIFICAS
+
+tiend> db.productos.find({ "nombre": { "$regex": /Camisa/i } })
+[
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa64'),
+    nombre: 'Camisa de Algodón',
+    categoria: 'Ropa',
+    precio: 45,
+    cantidad: 30,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aa78'),
+    nombre: 'Camisa Formal Zara',
+    categoria: 'Ropa',
+    precio: 55,
+    cantidad: 20,
+    disponible: true
+  },
+  {
+    _id: ObjectId('6722d30eb2df0257e108aab9'),
+    nombre: 'Camisa Polo Lacoste',
+    categoria: 'Ropa',
+    precio: 80,
+    cantidad: 12,
+    disponible: true
+  }
+]
+tiend>
+
+tiend> //CONTAR PRODUCTOS DISPONIBLES
+
+tiend> db.productos.countDocuments({ "disponible": true })
+83
+tiend>
+
+tiend> //AGRUPAR PRODUCTOS POR CATEGORIAS Y TOTALIZARAS
+
+tiend> db.productos.aggregate([{"$group": {"_id": "$categoria","total": { "$sum": 1 } } }])
+[
+  { _id: 'Ropa', total: 22 },
+  { _id: 'Muebles', total: 2 },
+  { _id: 'Accesorios', total: 5 },
+  { _id: 'Juguetes', total: 1 },
+  { _id: 'Mascotas', total: 1 },
+  { _id: 'Instrumentos', total: 1 },
+  { _id: 'Deportes', total: 3 },
+  { _id: 'Belleza', total: 1 },
+  { _id: 'Electrónica', total: 32 },
+  { _id: 'Hogar', total: 29 }
+]
+tiend>
